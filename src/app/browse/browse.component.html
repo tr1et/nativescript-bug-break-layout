@@ -1,21 +1,38 @@
 <ActionBar class="action-bar">
-    <!-- 
+  <!--
     Use the NavigationButton as a side-drawer button in Android
     because ActionItems are shown on the right side of the ActionBar
     -->
-    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
-    <!-- 
+  <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+  <!--
     Use the ActionItem for IOS with position set to left. Using the
     NavigationButton as a side-drawer button in iOS is not possible,
     because its function is to always navigate back in the application.
     -->
-    <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
-        ios.position="left">
-    </ActionItem>
-    <Label class="action-bar-title" text="Browse"></Label>
+  <ActionItem
+    icon="res://navigation/menu"
+    android:visibility="collapsed"
+    (tap)="onDrawerButtonTap()"
+    ios.position="left"
+  >
+  </ActionItem>
+  <Label class="action-bar-title" text="Browse"></Label>
 </ActionBar>
 
 <GridLayout class="page page-content">
-    <Label class="page-icon fa" text="&#xf1ea;"></Label>
-    <Label class="page-placeholder" text="<!-- Page content goes here -->"></Label>
+  <RadListView class="list-group" [items]="persons">
+    <ng-template tkListItemTemplate let-item="item">
+      <StackLayout
+        class="list-group-item"
+        orientation="vertical"
+        style="border-width: 1; border-color: black; padding: 10;"
+      >
+        <Label class="list-group-item-heading" [text]="item.name"></Label>
+        <StackLayout class="hr-light m-y-5"></StackLayout>
+        <Label class="list-group-item-text" [text]="item.email"></Label>
+        <Label class="list-group-item-text" [text]="item.address"></Label>
+        <Label class="list-group-item-text" [text]="item.description" textWrap="true"></Label>
+      </StackLayout>
+    </ng-template>
+  </RadListView>
 </GridLayout>
