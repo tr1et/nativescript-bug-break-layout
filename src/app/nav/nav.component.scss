@@ -1,0 +1,26 @@
+.nav {
+  border-top-width: 1;
+  border-top-style: solid;
+  border-top-color: gray;
+  background: white;
+
+  &__button {
+    padding: 10;
+
+    text-align: center;
+
+    color: gray;
+
+    &.active {
+      color: blue;
+    }
+  }
+
+  &__icon {
+    font-size: 20;
+  }
+
+  &__label {
+    font-size: 14;
+  }
+}
