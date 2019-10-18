@@ -19,11 +19,25 @@
   <Label class="action-bar-title" text="Home"></Label>
 </ActionBar>
 
-<StackLayout class="page page-content p-20">
-  <Label class="h3 text-center font-weight-bold" text="Break layout after open external app bug"></Label>
-  <Label
-    class="body m-y-20"
-    textWrap="true"
-    text="Open 'Settings' page and capture image and open 'Browse' page to see page got cut off."
-  ></Label>
-</StackLayout>
+<GridLayout class="page page-content" rows="auto, *">
+  <StackLayout class="p-20" row="0">
+    <Button class="btn btn-primary btn-rounded-lg" text="Open Contacts" (tap)="onOpenContacts($event)"></Button>
+  </StackLayout>
+  <GridLayout row="1">
+    <RadListView class="list-group" [items]="persons">
+      <ng-template tkListItemTemplate let-item="item">
+        <StackLayout
+          class="list-group-item"
+          orientation="vertical"
+          style="border-width: 1; border-color: black; padding: 10 0;"
+        >
+          <Label class="list-group-item-heading m-x-10" [text]="item.name"></Label>
+          <StackLayout class="hr-light m-y-5"></StackLayout>
+          <Label class="list-group-item-text m-x-10" [text]="item.email"></Label>
+          <Label class="list-group-item-text m-x-10" [text]="item.address"></Label>
+          <Label class="list-group-item-text m-x-10" [text]="item.description" textWrap="true"></Label>
+        </StackLayout>
+      </ng-template>
+    </RadListView>
+  </GridLayout>
+</GridLayout>

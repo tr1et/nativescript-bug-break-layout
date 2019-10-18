@@ -30,9 +30,6 @@ export class BrowseComponent implements OnInit {
                 description: faker.lorem.paragraphs(1)
             })
         );
-
-        console.log("this.persons.length = ", this.persons.length);
-        console.log("this.persons[0] = ", this.persons[0]);
     }
 
     onDrawerButtonTap(): void {

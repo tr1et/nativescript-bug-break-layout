@@ -47,5 +47,7 @@
 	<string>UIStatusBarStyleLightContent</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSContactsUsageDescription</key>
+	<string>Kindly provide permission to access contact on your device.</string>
 </dict>
 </plist>
