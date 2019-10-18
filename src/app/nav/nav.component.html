@@ -1,4 +1,4 @@
-<GridLayout class="nav" [row]="row" columns="*, auto, *, auto, *, auto, *" orientation="horizontal">
+<GridLayout class="nav" [row]="row" columns="*, auto, *, auto, *" orientation="horizontal">
   <StackLayout
     col="1"
     class="nav__button"
@@ -20,16 +20,5 @@
   >
     <Label class="nav__icon fa" text="&#xf1ea;"></Label>
     <Label class="nav__label" text="Browse"></Label>
-  </StackLayout>
-  <StackLayout
-    col="5"
-    class="nav__button"
-    [nsRouterLink]="['/settings']"
-    pageTransition="false"
-    nsRouterLinkActive="active"
-    [nsRouterLinkActiveOptions]="{ exact: true }"
-  >
-    <Label class="nav__icon fa" text="&#xf013;"></Label>
-    <Label class="nav__label" text="Settings"></Label>
   </StackLayout>
 </GridLayout>
